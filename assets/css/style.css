@@ -7,7 +7,6 @@
     --line-color: #333;
 }
 
-
 :root:has(#dark:checked) {
     --text-color: #ededed;
 	--background-color: #333;
@@ -22,6 +21,23 @@
     --line-color: #333;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #ededed;
+        --background-color: #333;
+        --links-bg-color: hsl(0, 0%, 30%);
+        --line-color: #f5f3f3;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #333;
+        --background-color: #f5f3f3;
+        --links-bg-color: #fff;
+        --line-color: #333;
+    }
+}
 
 html {
     color-scheme: dark light;
@@ -34,7 +50,7 @@ body {
     overflow-x: hidden;
     overflow-x: clip;
     font-family: 'Myriad Pro', arial, sans-serif;
-    font-size: 20px;
+    font-size: 16px; /* Default mobile font size */
     background-color: var(--background-color);
     transition: all 0.5s ease;
 }
@@ -72,6 +88,15 @@ a:is(:hover, :focus-visible, :active) {
     background-color: var(--background-color);
     overflow-y: hidden;
     transition: all 0.5s ease;
+    position: absolute;
+    flex-direction: column;
+    inset: var(--_inset) 0 0 0;
+    justify-content: space-between;
+    height: 0;
+}
+
+.header__navbar-wrapper.scrolled-up {
+    height: var(--_height-dvh, var(--_height-vh));
 }
 
 .header__logo {
@@ -80,7 +105,9 @@ a:is(:hover, :focus-visible, :active) {
 
 .nav__primary-ul {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    padding-top: 2em;
     gap: 2em;
 }
 
@@ -93,6 +120,7 @@ a:is(:hover, :focus-visible, :active) {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding-bottom: 2em;
 }
 
 .li_link {
@@ -101,6 +129,7 @@ a:is(:hover, :focus-visible, :active) {
 
 .burger__menu {
     cursor: pointer;
+    display: block;
 }
 
 .line {
@@ -166,10 +195,6 @@ a:is(:hover, :focus-visible, :active) {
     transform: rotateX(180deg) translateY(-5px);
 }
 
-.burger__menu {
-    display: none;
-}
-
 .burger__menu.active .line1 {
     transform: rotate(45deg) translate(0, 10px);
 }
@@ -197,28 +222,24 @@ input[type="radio"] {
     display: none;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 800px) {
     body {
-        font-size: 16px; 
-    }
-    .burger__menu {
-        display: block;
+        font-size: 20px;
     }
     .header__navbar-wrapper {
-        position: absolute;
-        flex-direction: column;
-        inset: var(--_inset) 0 0 0;
-        justify-content: space-between;
-        height: 0;
+        position: static;
+        flex-direction: row;
+        height: auto !important;
+        overflow-y: visible;
     }
     .nav__primary-ul {
-        flex-direction: column;
-        padding-top: 2em;
-    }   
-    .header__navbar-wrapper.scrolled-up {
-        height: var(--_height-dvh, var(--_height-vh));
+        flex-direction: row;
+        padding-top: 0;
     }
     .controls__wrapper {
-        padding-bottom: 2em;
+        padding-bottom: 0;
+    }
+    .burger__menu {
+        display: none;
     }
 }
