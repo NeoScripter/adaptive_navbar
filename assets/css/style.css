@@ -57,7 +57,7 @@ body {
 
 .li_link a,
 .li_link {
-    color: var(--link-main-color);
+    color: var(--text-color);
 }
 
 a.li_link:is(:hover, :focus-visible, :active) {
