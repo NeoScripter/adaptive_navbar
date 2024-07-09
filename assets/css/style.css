@@ -60,13 +60,13 @@ body {
     color: var(--link-main-color);
 }
 
-a:is(:hover, :focus-visible, :active) {
-    color: var(--link-hover-color);
+a.li_link:is(:hover, :focus-visible, :active) {
+    opacity: 0.8;
 }
 
 .header__primary {
     position: relative;
-    color: var(--link-main-color);
+    color: var(--text-color);
     padding: 1em;
     display: flex;
     align-items: center;
