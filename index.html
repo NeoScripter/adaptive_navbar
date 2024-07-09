@@ -4,76 +4,51 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Adaptive Navbar</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="assets/css/reset.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
         <script src="script.js" defer></script>
     </head>
     <body>
-        <div class="navbar">
-            <div class="navbar__wrapper">
-                <nav class="navbar__navigation">
-                    <a class="navbar__logo" href="/">home-logo</a>
-                    <div class="navbar__list">
-                        <div class="navbar__item">
-                            <a class="navbar__link" href="">link</a>
-                        </div>
-                        <div class="navbar__item">
-                            <a class="navbar__link" href="">link</a>
-                        </div>
-                        <div class="navbar__item">
-                            <a class="navbar__link" href="">link</a>
-                        </div>
-                        <div class="navbar__item">
-                            <a class="navbar__link" href=""
-                                >dropdown-link<svg
-                                    class="navbar__arrow"
-                                    clip-rule="evenodd"
-                                    fill-rule="evenodd"
-                                    stroke-linejoin="round"
-                                    stroke-miterlimit="2"
-                                    viewBox="0 0 18 18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"
-                                    /></svg></a>
-                            <div class="navbar__subitem">
-                                <a class="navbar__sublink" href="">dropdown-sublink</a>
-                                <a class="navbar__sublink" href="">dropdown-sublink</a>
-                            </div>
-                        </div>
-                        <div class="navbar__item">
-                            <a class="navbar__link" href=""
-                                >dropdown-link<svg
-                                    class="navbar__arrow"
-                                    clip-rule="evenodd"
-                                    fill-rule="evenodd"
-                                    stroke-linejoin="round"
-                                    stroke-miterlimit="2"
-                                    viewBox="0 0 18 18"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="m16.843 10.211c.108-.141.157-.3.157-.456 0-.389-.306-.755-.749-.755h-8.501c-.445 0-.75.367-.75.755 0 .157.05.316.159.457 1.203 1.554 3.252 4.199 4.258 5.498.142.184.36.29.592.29.23 0 .449-.107.591-.291 1.002-1.299 3.044-3.945 4.243-5.498z"
-                                    /></svg></a>
-                            <div class="navbar__subitem">
-                                <a class="navbar__sublink" href="">dropdown-sublink</a>
-                                <a class="navbar__sublink" href="">dropdown-sublink</a>
-                            </div>
-                        </div>
-                    </div>
+        <header class="header__primary">
+            <div class="header__logo">home-logo</div>
+            <div class="header__navbar-wrapper">
+                <nav class="nav__primary">
+                    <ul class="nav__primary-ul">
+                        <li class="li_link"><a href="">link</a></li>
+                        <li class="li_link"><a href="">link</a></li>
+                        <li class="li_link"><a href="">link</a></li>
+                        <li class="li_link dropdown_link">
+                            dropdown link
+                            <img src="assets/svgs/link.svg" alt="" class="dropdown__arrow">
+                            <ul class="sublink__ul">
+                                <li><a href="">dropdown sublink</a></li>
+                                <li><a href="">dropdown sublink</a></li>
+                            </ul>
+                        </li>
+                        <li class="li_link dropdown_link">
+                            dropdown link 
+                            <img src="assets/svgs/link.svg" alt="" class="dropdown__arrow">
+                            <ul class="sublink__ul">
+                                <li><a href="">dropdown sublink</a></li>
+                                <li><a href="">dropdown sublink</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </nav>
-                <div class="navbar__socials">
-                    <a class="whatsapp" href="https://wa.me/" rel="noopener noreferrer nofollow" target="_blank"></a>
-                    <a
-                        class="telegram"
-                        href="https://telegram.me/"
-                        rel="noopener noreferrer nofollow"
-                        target="_blank"
-                    ></a>
-                    <button class="navbar__themeswitch" type="button"></button>
+                <div class="controls__wrapper">
+                    <a href="" class="social__link"><img src="assets/svgs/whatsapp.svg" alt=""></a>
+                    <a href="" class="social__link"><img src="assets/svgs/telegram.svg" alt=""></a>
+                    <label for="light" class="theme-label"><img src="assets/svgs/theme-light.svg" alt=""><input type="radio" name="theme" id="light" checked></label>
+                    <label for="dark" class="theme-label"><img src="assets/svgs/theme-dark.svg" alt=""><input type="radio" name="theme" id="dark"></label>
                 </div>
-                <button class="navbar__navicon" type="button"></button>
             </div>
-        </div>
+            <div class="burger__menu">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <line class="line line1" x1="5" y1="10" x2="35" y2="10"/>
+                    <line class="line line2" x1="5" y1="20" x2="35" y2="20"/>
+                    <line class="line line3" x1="5" y1="30" x2="35" y2="30"/>
+                </svg>
+            </div>
+        </header>
     </body>
 </html>
