@@ -139,6 +139,10 @@ a.li_link:is(:hover, :focus-visible, :active) {
     transform-origin: center;
 }
 
+.dropdown__arrow path {
+    fill: var(--text-color);
+}
+
 .social__link,
 .theme-label {
     aspect-ratio: 1;
