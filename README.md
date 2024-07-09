@@ -1,1 +1,1 @@
-# adaptive_navbar
+[# adaptive_navbar](https://neoscripter.github.io/adaptive_navbar/)
